@@ -24,3 +24,6 @@ There was some error with babel-core when trying to write this file using ES6 an
 
 This directory is where I am writing the JavaScript code in ES6. Then with the gulp task 'build' browserify will bundle up main.js and place it in the public/js folder.
 
+## comment.json
+
+This is just a testing file to simulate an API, or a database. There is a Promise ajax call made in the React component which will on success call `this.setState()` which is the way that react updates the webpage. In the main.js file where the main `ReactDOM.render` resides, is where I pass in the url to call.

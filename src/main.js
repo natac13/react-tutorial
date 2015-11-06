@@ -7,4 +7,6 @@ const data = [
   {author: "Jordan Walke", text: "This is *another* comment"}
 ];
 
-ReactDOM.render(<CommentBox data={data}/>, document.getElementById('content'));
+ReactDOM.render(<CommentBox url="/api/comments" pollInterval={2000}/>,
+                document.getElementById('content')
+            );

@@ -5,7 +5,7 @@ import babelify   from 'babelify';
 import source     from 'vinyl-source-stream';
 import plumber    from 'gulp-plumber';
 import notify     from 'gulp-notify';
-
+// ToDo get plumber working
 const paths = {
     js: './src/main.js',
     dist: './public/js',
@@ -20,8 +20,8 @@ gulp.task('build', function() {
         })
         .transform(babelify, {presets: ['es2015', 'react']})
         .bundle()
-        .pipe(source('bundle.js'))
         .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
+        .pipe(source('bundle.js'))
         .pipe(notify({message: "Generated file: <%= file.relative %>"}))
         .pipe(gulp.dest(paths.dist));
 });
